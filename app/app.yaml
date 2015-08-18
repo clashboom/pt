@@ -1,0 +1,57 @@
+application: plasttech-bms
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+  - url: /static
+    static_dir: static
+
+  - url: /assets
+    static_dir: assets
+
+  - url: /images
+    static_dir: images
+
+  - url: /(.*\.css)
+    mime_type: text/css
+    static_files: \1
+    upload: (.*\.css)
+
+  - url: /(.*\.js)
+    mime_type: text/javascript
+    static_files: \1
+    upload: (.*\.js)
+
+  - url: /(.*\.txt)
+    mime_type: text/plain
+    static_files: \1
+    upload: (.*\.txt)
+
+  - url: /(.*\.xml)
+    mime_type: application/xml
+    static_files: \1
+    upload: (.*\.xml)
+
+  - url: /(.*\.(bmp|gif|ico|jpeg|jpg|png))
+    static_files: \1
+    upload: (.*\.(bmp|gif|ico|jpeg|jpg|png))
+
+
+  - url: .*
+    script: handlers.app
+
+
+
+libraries:
+  - name: jinja2
+    version: latest
+
+  - name: webapp2
+    version: latest
+
+  - name: django
+    version: latest
+
+
