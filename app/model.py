@@ -6,12 +6,15 @@ from google.appengine.ext import ndb
 
 
 class Order(ndb.Model):
-    order_link = ndb.StringProperty(required=True)
+    order_link = ndb.StringProperty()
     order_number = ndb.IntegerProperty(required=True)
     order_status = ndb.StringProperty()
     order_delivery_date = ndb.DateProperty()
 
     job_number = ndb.IntegerProperty()
+    status = ndb.StringProperty()
+    stages = ndb.JsonProperty()
+
     records_link = ndb.StringProperty()
 
     @classmethod
@@ -27,3 +30,6 @@ class Elite(Order):
     color = ndb.StringProperty(required=True)
     streamer = ndb.StringProperty()
     accessories = ndb.JsonProperty()
+    notes = ndb.TextProperty()
+
+

@@ -16,6 +16,8 @@ TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), 'templates')
 JINJA_ENV = jinja2.Environment(loader=jinja2.FileSystemLoader(TEMPLATE_DIR),
                                autoescape=True)
 
+import model
+
 
 class NotFound(Exception):
     pass
@@ -105,6 +107,11 @@ class OrderHandler(Handler):
         self.render("orders.html")
 
 
+class EliteNewHandler(Handler):
+    def get(self):
+        self.render("elite_new_order.html")
+
+
 # Webapp2 config
 config = {}
 config['webapp2_extras.sessions'] = {
@@ -115,5 +122,6 @@ config['webapp2_extras.sessions'] = {
 
 app = webapp2.WSGIApplication([
     ('/orders', OrderHandler),
+    ('/elite_new', EliteNewHandler),
     ('.*', HomeHandler),
 ], config=config, debug=True)

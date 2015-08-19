@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
+
+  <form action="#">
+
+    <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+      <div class="mdl-tabs__tab-bar">
+        <a href="#general-panel" class="mdl-tabs__tab is-active">General</a>
+        <a href="#finish-panel" class="mdl-tabs__tab">Finish</a>
+        <a href="#extras-panel" class="mdl-tabs__tab">Extras</a>
+      </div>
+
+      <div class="mdl-tabs__panel is-active" id="general-panel">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" id="order_link" />
+          <label class="mdl-textfield__label" for="order_link">Order link</label>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="order_number" />
+          <label class="mdl-textfield__label" for="order_number">Order number</label>
+          <span class="mdl-textfield__error">Input is not a number!</span>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield">
+          <textarea class="mdl-textfield__input" type="text" rows= "10" id="notes" ></textarea>
+          <label class="mdl-textfield__label" for="notes">Notes/Remarks</label>
+        </div>
+      </div>
+
+
+
+      <div class="mdl-tabs__panel" id="finish-panel">
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+          <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked />
+          <span class="mdl-radio__label">White RAL 9003</span>
+        </label>
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+          <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2" />
+          <span class="mdl-radio__label">Spaceball Black</span>
+        </label>
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+          <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3" />
+          <span class="mdl-radio__label">Hellish Blue</span>
+        </label>
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
+          <input type="radio" id="option-4" class="mdl-radio__button" name="options" value="4" />
+          <span class="mdl-radio__label">Sky Red</span>
+        </label>
+
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" id="order_link" />
+          <label class="mdl-textfield__label" for="order_link">Other</label>
+        </div>
+
+      </div>
+
+      <div class="mdl-tabs__panel" id="extras-panel">
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="extra-1">
+          <input type="checkbox" id="extra-1" class="mdl-checkbox__input"  />
+          <span class="mdl-checkbox__label">Side padding</span>
+        </label>
+
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="extra-2">
+          <input type="checkbox" id="extra-2" class="mdl-checkbox__input"  />
+          <span class="mdl-checkbox__label">Alu-Sportrim with tyres</span>
+        </label>
+
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="extra-3">
+          <input type="checkbox" id="extra-3" class="mdl-checkbox__input"  />
+          <span class="mdl-checkbox__label">Roof hatch</span>
+        </label>
+
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="extra-4">
+          <input type="checkbox" id="extra-4" class="mdl-checkbox__input"  />
+          <span class="mdl-checkbox__label">Kick sheet</span>
+        </label>
+      </div>
+
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}
